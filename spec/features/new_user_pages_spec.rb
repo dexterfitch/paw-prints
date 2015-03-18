@@ -15,7 +15,7 @@ describe "the create user function" do
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
     click_on "Create User"
-    expect(page).to have_content "Users"
+    expect(page).to have_content "Welcome"
   end
 
   it "throws an error when no name is entered" do

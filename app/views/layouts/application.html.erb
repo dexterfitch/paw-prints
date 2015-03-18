@@ -22,10 +22,10 @@
           <i class="fa fa-connectdevelop"></i>
           <%= link_to new_user_path do %>Register<% end %>
           <i class="fa fa-connectdevelop"></i>
-          <% if ! current_user %>
-            <%= link_to new_session_path do %>Login<% end %>
-          <% else %>
+          <% if current_user %>
             <%= link_to session_path(current_user), :data => { :method => :delete } do %>Logout<% end %>
+          <% else %>
+            <%= link_to new_session_path do %>Login<% end %>
           <% end %>
         <i class="fa fa-connectdevelop"></i></p>
         <hr>

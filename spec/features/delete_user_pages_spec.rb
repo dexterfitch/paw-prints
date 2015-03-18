@@ -9,7 +9,11 @@ describe "the delete user function" do
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
     click_on "Create User"
-    click_on "Beethoven"
+    click_on "Login"
+    fill_in "Email", :with => "fifth@symphony.com"
+    fill_in "Password", :with => "what"
+    click_on "Login"
+    # NEED TO LOGOUT BEFORE DELETE RECORD SOMEHOW HELPPPPP
     click_on "Delete"
     expect(page).to have_content "destroyed!"
   end

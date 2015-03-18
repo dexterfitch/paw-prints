@@ -20,6 +20,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user != current_user
+      flash[:notice] = "Not your page, buster!"
+      redirect_to users_path
+    end
   end
 
   def show

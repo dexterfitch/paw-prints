@@ -5,12 +5,44 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 
-<%= yield %>
+ <div class="container">
+    <div class="row">
+      <div class="col-md-12 center">
+        <h1>Paw Prints</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 center">
+        <p>
+          <i class="fa fa-connectdevelop"></i>
+          <%= link_to new_user_path do %>Register<% end %>
+          <i class="fa fa-connectdevelop"></i>
+          <% if ! current_user %>
+            <%= link_to new_session_path do %>Login<% end %>
+          <% else %>
+            <%= link_to session_path(current_user), :data => { :method => :delete } do %>Logout<% end %>
+          <% end %>
+        <i class="fa fa-connectdevelop"></i></p>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= yield %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 center">
+        <%= flash[:alert] %>
+        <%= flash[:notice] %>
+      </div>
+    </div>
+  </div>
 
-<%= flash[:alert] %>
-<%= flash[:notice] %>
 </body>
 </html>

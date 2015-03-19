@@ -14,7 +14,8 @@ describe "the create user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "Welcome"
   end
 
@@ -24,7 +25,8 @@ describe "the create user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "problem"
   end
 
@@ -34,7 +36,8 @@ describe "the create user function" do
     fill_in "Name", :with => "Beethoven"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "problem"
   end
 
@@ -44,7 +47,8 @@ describe "the create user function" do
     fill_in "Name", :with => "Beethoven"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "problem"
   end
 
@@ -54,7 +58,8 @@ describe "the create user function" do
     fill_in "Name", :with => "Beethoven"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "problem"
   end
 end

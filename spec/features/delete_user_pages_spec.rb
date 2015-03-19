@@ -8,7 +8,8 @@ describe "the delete user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     click_on "Login"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"

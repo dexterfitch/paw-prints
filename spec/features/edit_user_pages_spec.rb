@@ -8,7 +8,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     click_on "Login"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
@@ -24,7 +25,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     click_on "Login"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
@@ -34,7 +36,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "99fifth@symphony.com"
     fill_in "Password", :with => "whatwhat"
     fill_in "Password confirmation", :with => "whatwhat"
-    click_on "Update User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "Yohan"
   end
 
@@ -45,7 +48,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     click_on "Login"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
@@ -55,7 +59,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "99fifth@symphony.com"
     fill_in "Password", :with => "whatwhat"
     fill_in "Password confirmation", :with => "whatwhat"
-    click_on "Update User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "blank"
   end
 
@@ -66,7 +71,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     click_on "Login"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
@@ -76,7 +82,8 @@ describe "the edit user function" do
     fill_in "Email", :with => ""
     fill_in "Password", :with => "whatwhat"
     fill_in "Password confirmation", :with => "whatwhat"
-    click_on "Update User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "blank"
   end
 
@@ -87,7 +94,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     click_on "Login"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
@@ -97,7 +105,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "99fifth@symphony.com"
     fill_in "Password", :with => ""
     fill_in "Password confirmation", :with => "whatwhat"
-    click_on "Update User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "errors"
   end
 
@@ -108,7 +117,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
     fill_in "Password confirmation", :with => "what"
-    click_on "Create User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     click_on "Login"
     fill_in "Email", :with => "fifth@symphony.com"
     fill_in "Password", :with => "what"
@@ -118,7 +128,8 @@ describe "the edit user function" do
     fill_in "Email", :with => "99fifth@symphony.com"
     fill_in "Password", :with => "whatwhat"
     fill_in "Password confirmation", :with => ""
-    click_on "Update User"
+    attach_file('Avatar', 'public/test/baethoven.jpg')
+    click_on "Submit"
     expect(page).to have_content "errors"
   end
 end

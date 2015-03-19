@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = @user.name + "'s details edited!"
-      redirect_to users_path
+      redirect_to user_path(@user)
     else
       render :edit
     end
@@ -48,9 +48,8 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-
 private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:avatar, :name, :email, :password, :password_confirmation)
   end
 end

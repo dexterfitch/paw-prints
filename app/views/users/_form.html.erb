@@ -1,13 +1,34 @@
 <%= render "layouts/errors", :object => @user %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit %>
+<%= form_for @user, :html => { :mulitpart => true} do |f| %>
+  <ul class="formList list-unstyled">
+    <li>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </li>
+
+    <li>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </li>
+
+    <li>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </li>
+
+    <li>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %>
+    </li>
+
+    <li>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar, :class => "well" %>
+    </li>
+
+    <li class="submit">
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </li>
+  </ul>
 <% end %>

@@ -1,0 +1,13 @@
+<h4>Prints</h4>
+<%= form_for [@user, @print], :html => { :multipart => true} do |f| %>
+  <ul class="formList list-unstyled well">
+    <li>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </li>
+
+    <li class="submit">
+      <%= f.submit "Print", :class => "btn btn-primary" %>
+    </li>
+  </ul>
+<% end %>

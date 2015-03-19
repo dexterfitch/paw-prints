@@ -2,8 +2,23 @@
   <div class="col-md-12">
     <%= image_tag @user.avatar.url(:medium) %>
     <h3><%= @user.name %></h3>
-    <h4>Prints</h4>
-    <p>Prints go here</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Add a new Print", new_user_print_path(current_user) %>
+    <% if @user.prints.any? %>
+      <hr>
+      <div class="row">
+        <% @user.prints.each do |image| %>
+          <div class="col-md-2 inline">
+            <%= image_tag image.image.url(:thumb) %>
+          </div>
+        <% end %>
+      </div>
+      <hr>
+    <% end %>
   </div>
 </div>
 

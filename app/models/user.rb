@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :prints
   attr_accessor :password
 
   validates_confirmation_of :password
@@ -27,14 +28,3 @@ class User < ActiveRecord::Base
     end
   end
 end
-
-
-
-  # validates_attachment :avatar, :presence => true,
-  #                       :content_type => { :content_type => "image/jpeg" },
-  #                       :size => { :in => 0..10.kilobytes }
-  # has_attached_file :avatar,
-  #                   :path => "../../public/system/users/avatars/:attachment/:id/:style/:filename",
-  #                   :url => "/system/users/avatars/:attachment/:id/:style/:filename",
-  #                   :styles => { :medium => "300x300>", :thumb => "100x100>" },
-  #                   :default_url => "/images/:style/missing.png"

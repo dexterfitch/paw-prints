@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    session[:user_id] = nil
     @user.destroy
     flash[:notice] = "Record destroyed!"
     redirect_to users_path

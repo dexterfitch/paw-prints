@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if current_user
+      redirect_to user_path(current_user)
+    end
+
+    # if Session != nil
+    #   @user = User.find(params[:id])
+    #   if @user == current_user
+    #     redirect_to user_path(@user)
+    #   end
+    # end
   end
 
   def create

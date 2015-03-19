@@ -13,7 +13,7 @@
       <div class="row">
         <% @user.prints.each do |image| %>
           <div class="col-md-2 inline">
-            <%= image_tag image.image.url(:thumb) %>
+            <%= link_to (image_tag image.image.url(:thumb)), image.image.url %>
           </div>
         <% end %>
       </div>
